@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 import crud.models.User;
 import crud.dao.UserDao;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,7 +21,14 @@ public class UserServiceImpl implements UserService {
         this.userDao = userDao;
     }
 
+    @Transactional
     public List<User> getUsers() {
         return userDao.getUsers();
+    }
+
+    @Override
+    @Transactional
+    public void saveUser(User user) {
+        userDao.saveUser(user);
     }
 }

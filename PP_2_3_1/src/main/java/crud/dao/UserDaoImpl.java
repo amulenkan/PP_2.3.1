@@ -27,7 +27,7 @@ public class UserDaoImpl implements UserDao {
     public UserDaoImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
     }
-    private List<User> users;
+    //private List<User> users;
     /*{
         users = new ArrayList<>();
 
@@ -37,9 +37,14 @@ public class UserDaoImpl implements UserDao {
 
     }*/
     @Override
-    @Transactional
     public List<User> getUsers() {
 
         return entityManager.createQuery("FROM User ", User.class).getResultList();
+    }
+
+    @Override
+    public void saveUser(User user) {
+        entityManager.persist(user);
+
     }
 }
