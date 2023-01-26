@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:ath="http://www.w3.org/1999/XSL/Transform">
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
 <h2>All users</h2>
+
+<!--<div th:each="user: ${users}">-->
+<!--    <a th:ref="@{/{id}}(id=${user.getId})" th:text="${user.getName()}">user</a>-->
+<!--</div>-->
 
 <table>
     <thead>
@@ -15,16 +18,23 @@
         <th scope="col">Surname</th>
         <th scope="col">Age</th>
         <th scope="col">Email</th>
+        <th scope="col">Operations</th>
     </tr>
     </thead>
 
     <tbody>
+    <tr >
     <tr th:each="user: ${users}">
-
         <td th:text="${user.name}"/>
         <td th:text="${user.surname}"/>
         <td th:text="${user.age}"/>
         <td th:text="${user.email}"/>
+        <td>
+            <a th:href="@{/{id}(id=${user.getId()})}" th:text="updateButton">
+                update</a>
+        </td>
+    </tr>
+
     </tr>
     </tbody>
 </table>

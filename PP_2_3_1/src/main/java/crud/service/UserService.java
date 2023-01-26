@@ -7,4 +7,8 @@ public interface UserService {
     List<User> getUsers();
 
     public void saveUser(User user);
+
+    public User getUser(int id);
+
+
 }

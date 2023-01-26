@@ -7,7 +7,7 @@
 <body>
 <h2>User info</h2>
 <form action="saveUser" modelattribute="user">
-    <input type="hidden" th:value="${user.getId}" th:attr="name='id'"/>
+    <form:hidden path="id"/>
 
     <label for="name">Name: </label>
     <input type="text" name="name" id="name">

@@ -5,10 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.*;
 import crud.service.UserService;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
@@ -41,6 +39,14 @@ public class UsersController {
 		userService.saveUser(user);
 
 		return "redirect:/";
+	}
+
+	@RequestMapping("/{id}")
+	public String updateUser(@PathVariable("id") int id, Model model) {
+		User user = userService.getUser(id);
+		model.addAttribute("user", user);
+
+		return "user-info";
 	}
 	
 }
