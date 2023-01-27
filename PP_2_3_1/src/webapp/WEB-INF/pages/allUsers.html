@@ -1,15 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:ath="http://www.w3.org/1999/XSL/Transform">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title></title>
 </head>
 <body>
 <h2>All users</h2>
-
-<!--<div th:each="user: ${users}">-->
-<!--    <a th:ref="@{/{id}}(id=${user.getId})" th:text="${user.getName()}">user</a>-->
-<!--</div>-->
 
 <table>
     <thead>
@@ -34,12 +30,17 @@
                                                              onclick="window.location.href = 'updateUser'"/>
                 </a>
         </td>
+        <td>
+            <a th:href="@{/{id}/delete(id=${user.getId()})}"> <input type="button" value="Delete"
+                                                              onclick="window.location.href = 'deleteUser'"/>
+            </a>
+        </td>
     </tr>
 
     </tr>
     </tbody>
 </table>
-<br>
+<br/>
 <input type="button" value="Add"
     onclick="window.location.href = 'addNewUser' ">
 </body>

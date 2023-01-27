@@ -55,4 +55,9 @@ public class UserDaoImpl implements UserDao {
 
         return user;
     }
+
+    @Override
+    public void deleteUser(int id) {
+        entityManager.remove(getUser(id));
+    }
 }
