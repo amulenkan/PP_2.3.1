@@ -30,8 +30,9 @@
         <td th:text="${user.age}"/>
         <td th:text="${user.email}"/>
         <td>
-            <a th:href="@{/{id}(id=${user.getId()})}" th:text="updateButton">
-                update</a>
+            <a th:href="@{/{id}(id=${user.getId()})}"> <input type="button" value="Update"
+                                                             onclick="window.location.href = 'updateUser'"/>
+                </a>
         </td>
     </tr>
 
