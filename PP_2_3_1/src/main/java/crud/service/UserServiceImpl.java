@@ -2,7 +2,6 @@ package crud.service;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import crud.models.User;
 import crud.dao.UserDao;
 import org.springframework.stereotype.Service;
