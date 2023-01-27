@@ -32,7 +32,7 @@
             <td th:text="${user.email}"/>
         <td>
             <input type="button" value="Update"
-                   onclick="window.location.href = '${updateButton}'"/>
+                   onclick="window.location.href = 'updateUser'"/>
         </td>
         </tr>
     </c:forEach>

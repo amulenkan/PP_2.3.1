@@ -7,19 +7,19 @@
 <body>
 <h2>User info</h2>
 <form action="saveUser" modelattribute="user">
-    <form:hidden path="id"/>
+    <input type="hidden" th:value="${user.getId}" th:attr="name='id'"/>
 
     <label for="name">Name: </label>
-    <input type="text" name="name" id="name">
+    <input type="text" th:field="*{user.name}" id="name"/>
     <br/>
     <label for="name">Surname: </label>
-    <input type="text" name="surname" id="surname">
+    <input type="text" th:field="surname" id="surname"/>
     <br/>
     <label for="age">Age: </label>
-    <input type="number" min="1" max="150" name ="age" id="age"/>
+    <input type="number" min="1" max="150" th:field="age" id="age"/>
     <br/>
     <label for="email">Email: </label>
-    <input type="text" name="email" id="email">
+    <input type="text" th:field="*{email}" id="email"/>
     <br/>
 
     <input type="submit" value="OK">
