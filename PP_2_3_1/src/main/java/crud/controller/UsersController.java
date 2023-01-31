@@ -34,7 +34,7 @@ public class UsersController {
 		return "user-info";
 	}
 
-	@GetMapping("/saveUser")
+	@PostMapping("/saveUser")
 	public String saveUser(@ModelAttribute("user") User user) {
 		userService.saveUser(user);
 

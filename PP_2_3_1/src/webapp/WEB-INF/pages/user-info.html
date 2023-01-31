@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>User info</h2>
-<form action="saveUser" modelattribute="user">
+<form method="POST" action="saveUser" modelattribute="user">
     <input type="hidden" th:value="${user.getId}" th:attr="name='id'"/>
 
     <label for="name">Name: </label>
