@@ -26,14 +26,12 @@
         <td th:text="${user.age}"/>
         <td th:text="${user.email}"/>
         <td>
-            <a th:href="@{/{id}(id=${user.getId()})}"> <input type="button" value="Update"
-                                                             onclick="window.location.href = 'updateUser'"/>
-                </a>
+            <form th:method="PATCH" th:action="@{/{id}(id=${user.getId()})}"> <input type="submit" value="Update"/>
+                </form>
         </td>
         <td>
-            <a th:href="@{/{id}/delete(id=${user.getId()})}"> <input type="button" value="Delete"
-                                                              onclick="window.location.href = 'deleteUser'"/>
-            </a>
+            <form th:method="DELETE" th:action="@{/{id}/delete(id=${user.getId()})}"> <input type="submit" value="Delete"/>
+            </form>
         </td>
     </tr>
 
