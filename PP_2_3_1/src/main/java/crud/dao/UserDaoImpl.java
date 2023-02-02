@@ -14,8 +14,6 @@ public class UserDaoImpl implements UserDao {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public UserDaoImpl() {
-    }
 
     public UserDaoImpl(EntityManager entityManager) {
         this.entityManager = entityManager;
