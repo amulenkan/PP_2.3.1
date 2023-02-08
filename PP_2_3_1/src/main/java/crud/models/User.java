@@ -37,7 +37,6 @@ public class User {
     private String email;
 
     public User() {
-
     }
 
     public User(String name, String surname, Long age, String email) {
@@ -68,7 +67,6 @@ public class User {
     }
 
     public void setSurname(String surname) {
-
         this.surname = surname;
     }
 

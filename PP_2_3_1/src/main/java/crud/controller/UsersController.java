@@ -21,16 +21,13 @@ import javax.validation.Valid;
 public class UsersController {
 	private UserService userService;
 
-
 	public UsersController(UserService userService) {
 		this.userService = userService;
 	}
 
-
 	@GetMapping()
 	public String showAllUsers(ModelMap model) {
 		model.addAttribute("users", userService.getUsers());
-
 		return "allUsers";
 	}
 
@@ -38,7 +35,6 @@ public class UsersController {
 	public String addNewUser(Model model) {
 		User user = new User();
 		model.addAttribute("user", user);
-
 		return "user-info";
 	}
 
@@ -46,9 +42,7 @@ public class UsersController {
 	public String saveUser(@ModelAttribute("user") @Valid User user, BindingResult bindingResult) {
 		if (bindingResult.hasErrors())
 			return "user-info";
-
 		userService.saveUser(user);
-
 		return "redirect:/";
 	}
 
@@ -56,14 +50,12 @@ public class UsersController {
 	public String updateUser(@PathVariable("id") int id, Model model) {
 		User user = userService.getUser(id);
 		model.addAttribute("user", user);
-
 		return "user-info";
 	}
 
 	@DeleteMapping("/{id}/delete")
 	public String deleteUser(@PathVariable("id") int id) {
 		userService.deleteUser(id);
-
 		return "redirect:/";
 	}
 }
