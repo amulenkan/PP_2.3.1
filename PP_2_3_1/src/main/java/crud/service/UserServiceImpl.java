@@ -1,7 +1,6 @@
 package crud.service;
 
 import java.util.List;
-import org.springframework.beans.factory.annotation.Autowired;
 import crud.models.User;
 import crud.dao.UserDao;
 import org.springframework.stereotype.Service;
@@ -12,7 +11,7 @@ public class UserServiceImpl implements UserService {
 
     private UserDao userDao;
 
-    @Autowired
+
     public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
     }

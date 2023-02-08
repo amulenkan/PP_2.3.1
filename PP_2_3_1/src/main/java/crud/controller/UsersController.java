@@ -1,7 +1,6 @@
 package crud.controller;
 
 import crud.models.User;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -16,10 +15,11 @@ import javax.validation.Valid;
 public class UsersController {
 	private UserService userService;
 
-	@Autowired
+
 	public UsersController(UserService userService) {
 		this.userService = userService;
 	}
+
 
 	@GetMapping()
 	public String showAllUsers(ModelMap model) {
